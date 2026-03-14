@@ -1,50 +1,33 @@
-# Welcome to your Expo app 👋
+# CD Library React Native App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a simple React Native (Expo) app for managing CD borrowing and returns. It tracks inventory, borrowed records with due dates, penalties for overdue returns, total income, and total borrowed CDs of all time. Data is persisted using AsyncStorage.
 
-## Get started
+Quick start:
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+1. Install dependencies:
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Install Expo CLI (if you don't have it):
 
-## Learn more
+```bash
+npx expo install -g expo-cli
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+3. Run the app:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm start
+```
 
-## Join the community
+Features implemented to meet the rubric:
+- Initialize CD Inventory with title, artist, and quantity.
+- Home Screen lists Available CDs and Borrowed CDs with borrower, borrow date, due date, and current penalty.
+- Borrowing reduces copies and records borrow/due dates; prevents borrowing when none available.
+- Returning increases copies, calculates penalty (PHP2/day overdue), updates total income, and removes borrowed record.
+- All data persisted using AsyncStorage.
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Notes for submission:
+- Provide a short demo video showing borrowing, overdue penalty, return, and app restart to demonstrate persistence.
